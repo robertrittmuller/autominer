@@ -35,7 +35,7 @@ except:
 
 # check to make sure we have something that looks like a key pair
 if(len(myWalletAddress) == 42):
-    if(len(myPrivateKey) == 42):
+    if(len(myPrivateKey) == 64):
         print("Required wallet keys loaded sucessfully!")
     else:
         print("Public key loaded, no private key found, transactions will be disabled!")
