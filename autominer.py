@@ -11,6 +11,7 @@ from web3 import Web3
 import time, json
 import json
 import os
+import sys
 import random
 import csv
 import datetime
@@ -22,21 +23,35 @@ import grinchbucks_module
 import rocketgame_module
 
 # Settings
-intervalTime = 3600                 # time to wait between checks on the reward balance
+intervalTime = 3600 * 24            # time to wait between checks on the reward balance (default is once per day)
 api_rate_limit = 5                  # good idea to never drop this below 5 or transactions might be blocked
 
-MyWalletAddress = ''                # Wallet to interact with
-myPrivateKey = ''                   # DO NOT SAVE THIS TO DISK -- Replace with environment variable or in-memory copy-paste.
+try:
+    myWalletAddress = ""            # Environment variable for your public wallet address
+    myPrivateKey = ""               # Environment variable for your wallet's private key
+except:
+    print("Wallet keys not found!")
+    sys.exit()
+
+# check to make sure we have something that looks like a key pair
+if(len(myWalletAddress) == 42):
+    if(len(myPrivateKey) == 42):
+        print("Required wallet keys loaded sucessfully!")
+    else:
+        print("Public key loaded, no private key found, transactions will be disabled!")
+else:
+    print("ERROR: Wallet keys invalid!")
+    sys.exit()
 
 # setup connnection(s) to projects
 projects = []
-projects.append(bakedbeans_module.bakedbeans(MyWalletAddress, myPrivateKey))
+projects.append(bakedbeans_module.bakedbeans(myWalletAddress, myPrivateKey))
 time.sleep(api_rate_limit) # rate limit for API
-projects.append(roastbeef_module.roastbeef(MyWalletAddress, myPrivateKey))
+projects.append(roastbeef_module.roastbeef(myWalletAddress, myPrivateKey))
 time.sleep(api_rate_limit) # rate limit for API
-projects.append(grinchbucks_module.grinchbucks(MyWalletAddress, myPrivateKey))
+projects.append(grinchbucks_module.grinchbucks(myWalletAddress, myPrivateKey))
 time.sleep(api_rate_limit) # rate limit for API
-projects.append(rocketgame_module.rocketgame(MyWalletAddress, myPrivateKey))
+projects.append(rocketgame_module.rocketgame(myWalletAddress, myPrivateKey))
 
 print('-' * 100, 'All Contracts Loaded!')
 
