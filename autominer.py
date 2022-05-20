@@ -23,7 +23,7 @@ import grinchbucks_module
 import rocketgame_module
 
 # Settings
-intervalTime = 3600 * 24            # time to wait between checks on the reward balance (default is once per day)
+intervalTime = 3600                 # time to wait between checks on the reward balance (default is once per day)
 api_rate_limit = 5                  # good idea to never drop this below 5 or transactions might be blocked
 
 try:

@@ -9,7 +9,7 @@ class rocketgame(miners.miners):
     network = 'https://bsc-dataseed.binance.org/'                       # network API 
     contractAPI = 'https://api.bscscan.com/api'                         # contract API (needed to bet ABI)
     numActions = 6                                                      # Ratio between compounding and withdrawls (5:1 default)
-    actionThreshold = 5.0                                               # reward balance that triggers an action
+    actionThreshold = 0.1                                               # reward balance that triggers an action
     currentActionCount = 0                                              # placeholder for where we are in the action counter
     contract_address = '0xe76EF9bd1BFEC3730472049D5aFF17bc9c4D3E6d'     # Contract address
     wallet_address = None                                               # Property for the wallet address
