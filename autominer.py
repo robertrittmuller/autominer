@@ -20,7 +20,6 @@ import datetime
 import bakedbeans_module
 import roastbeef_module
 import grinchbucks_module
-import rocketgame_module
 
 # Settings
 intervalTime = 3600                 # time to wait between checks on the reward balance (default is once per day)
@@ -50,8 +49,6 @@ time.sleep(api_rate_limit) # rate limit for API
 projects.append(roastbeef_module.roastbeef(myWalletAddress, myPrivateKey))
 time.sleep(api_rate_limit) # rate limit for API
 projects.append(grinchbucks_module.grinchbucks(myWalletAddress, myPrivateKey))
-time.sleep(api_rate_limit) # rate limit for API
-projects.append(rocketgame_module.rocketgame(myWalletAddress, myPrivateKey))
 
 print('-' * 100, 'All Contracts Loaded!')
 
