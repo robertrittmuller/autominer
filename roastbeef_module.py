@@ -8,7 +8,7 @@ class roastbeef(miners.miners):
     savefileName = 'roastbeef.status'                                   # Name of file to use for saving script state in case you need to restart the script
     network = 'https://bsc-dataseed.binance.org/'                       # network API 
     contractAPI = 'https://api.bscscan.com/api'                         # contract API (needed to bet ABI)
-    numActions = 6                                                      # Ratio between compounding and withdrawls (5:1 default)
+    numActions = 2                                                      # Ratio between compounding and withdrawls (5:1 default)
     actionThreshold = 0.01                                              # reward balance that triggers an action
     currentActionCount = 0                                              # placeholder for where we are in the action counter
     contract_address = '0xd81F5DB384d604D85D158FCb8E00341Aff200E22'     # Contract address

@@ -8,7 +8,7 @@ class grinchbucks(miners.miners):
     savefileName = 'grinchbucks.status'                                 # Name of file to use for saving script state in case you need to restart the script
     network = 'https://bsc-dataseed.binance.org/'                       # network API 
     contractAPI = 'https://api.bscscan.com/api'                         # contract API (needed to bet ABI)
-    numActions = 6                                                      # Ratio between compounding and withdrawls (5:1 default)
+    numActions = 2                                                      # Ratio between compounding and withdrawls (5:1 default)
     actionThreshold = 0.01                                              # reward balance that triggers an action
     currentActionCount = 0                                              # placeholder for where we are in the action counter
     contract_address = '0xb3c0B3D3803D6C9ACf6c1af89bf1Cb728F8331B6'     # Contract address
