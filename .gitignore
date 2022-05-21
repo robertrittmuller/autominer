@@ -130,3 +130,5 @@ dmypy.json
 
 # Repro specific 
 .DS_Store
+*.csv
+*.status
