@@ -4,7 +4,6 @@
 ## MIT License
 ##################################################
 ## Author: @robertrittmuller (TW: @rjrittmuller)
-## Version: 0.1.1
 ##################################################
 from tkinter import E
 from web3 import Web3
@@ -20,6 +19,8 @@ import datetime
 import bakedbeans_module
 import roastbeef_module
 import grinchbucks_module
+import solarfarm_module
+import bnbminer_module
 
 # Settings
 intervalTime = 3600                 # time to wait between checks on the reward balance (default is once per day)
@@ -49,6 +50,11 @@ time.sleep(api_rate_limit) # rate limit for API
 projects.append(roastbeef_module.roastbeef(myWalletAddress, myPrivateKey))
 time.sleep(api_rate_limit) # rate limit for API
 projects.append(grinchbucks_module.grinchbucks(myWalletAddress, myPrivateKey))
+time.sleep(api_rate_limit) # rate limit for API
+projects.append(solarfarm_module.solarfarm(myWalletAddress, myPrivateKey))
+time.sleep(api_rate_limit) # rate limit for API
+projects.append(bnbminer_module.bnbminer(myWalletAddress, myPrivateKey))
+time.sleep(api_rate_limit) # rate limit for API
 
 print('-' * 100, 'All Contracts Loaded!')
 
@@ -78,7 +84,7 @@ while True:
         action = 'None'
         if(minerBalance > 0):
             # Now we need to validate some criteria before taking any actions
-            if(myPendingReward > projects[i].actionThreshold and projects[i].getWalletBalance() > 0):
+            if(myPendingReward >= projects[i].actionThreshold and projects[i].getWalletBalance() > 0):
                 # Now check to see what action we should do (withdraw or compound)
                 print('Current action count =', projects[i].currentActionCount)
                 if projects[i].currentActionCount >= projects[i].numActions: 
