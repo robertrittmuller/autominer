@@ -57,6 +57,8 @@ Currently, the script has the following features:
 Installation is simple, just install the dependencies in your favorite Python environment, setup your wallet addresses, and run!
 
 ```
+git clone https://github.com/robertrittmuller/autominer.git
+cd autominer
 pip install -r requirements.txt
 ```
 
