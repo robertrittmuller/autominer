@@ -9,11 +9,8 @@ class bnbminer(miners.miners):
     network = 'https://bsc-dataseed.binance.org/'                       # network API 
     contractAPI = 'https://api.bscscan.com/api'                         # contract API (needed to bet ABI)
     numActions = 2                                                      # Ratio between compounding and withdrawls (6:1 default)
-    actionThreshold = 0.01                                              # reward balance that triggers an action
-    currentActionCount = 0                                              # placeholder for where we are in the action counter
+    actionThreshold = 0.005                                             # reward balance that triggers an action
     contract_address = '0xce93F9827813761665CE348e33768Cb1875a9704'     # Contract address
-    wallet_address = None                                               # Property for the wallet address
-    private_key = None                                                  # Property for the private wallet key
 
     # sub-object properties
     connection = None                                                   # web3 connection object

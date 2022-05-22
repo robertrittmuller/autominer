@@ -27,8 +27,8 @@ intervalTime = 3600                 # time to wait between checks on the reward 
 api_rate_limit = 5                  # good idea to never drop this below 5 or transactions might be blocked
 
 try:
-    myWalletAddress = ""            # Environment variable for your public wallet address
-    myPrivateKey = ""               # Environment variable for your wallet's private key
+    myWalletAddress = ""            # Variable for your public wallet address
+    myPrivateKey = ""               # Variable for your wallet's private key
 except:
     print("Wallet keys not found!")
     sys.exit()
