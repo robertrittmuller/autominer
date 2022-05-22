@@ -57,6 +57,8 @@ This script is run at the command line and does not feature any type of graphica
 
 Your public wallet address and private key need to be added before the script will work. Please follow security best practices when using your private key!
 
+Edit the following variables within <a href="autominer.py">autominer.py</a>.
+
 ```python
 myWalletAddress = ""
 myPrivateKey = ""
