@@ -1,7 +1,7 @@
 # Autominer Web3 Project Automation Script
 >BNB Miner Web3 automation script. Supports Baked Beans Miner, Grinch Bucks Miner, BNB Miner, Roast Beef, and soon several others!
 
-The purpose of the script is to automate the typical actions required by "miner" types of crypto projects. The script checks each project once an hour and performs either a compound (reinvestment) or withdrawl action based on schedule settings contained within [projectname_module.py]. 
+The purpose of the script is to automate the typical actions required by these "miner" types of crypto projects. The script checks each project once an hour and performs either a compound (reinvestment) or withdrawl action based on schedule settings contained within [projectname_module.py]. 
 
 >The main goal of writing this script was to remove the need to keep checking on these projects daily!
 
