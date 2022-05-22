@@ -1,7 +1,7 @@
 ##################################################
-## General BNB-Miner Automation Script
+## General BNB-Miner Web3 Automation Script
 ##################################################
-## MIT License
+## Distributed under the MIT License
 ##################################################
 ## Author: @robertrittmuller (TW: @rjrittmuller)
 ##################################################
